@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+</head>
+<body>
+    <div class="wrapper">
+        <h2>Inregistrare</h2>
+
+        <div class="form_container">
+            <form action="" method="POST"
+
+                <div class="input_name">
+                    <i class="fa fa-user lock"></i>
+                    <input type="text" placeholder="Familia" class="name">       <!--Forma pentru Familia-->
+
+                    <span class="last">
+                    <i class="fa fa-user lock"></i>
+                    <input type="text" placeholder="Numele" class="name">       <!--Forma pentru Numele-->
+                    </span>
+                </div>
+
+                <div class="input_name">
+                    <i class="fa fa-envelope email"></i>
+                    <input type="email" placeholder="Email" class="text_name">      <!--Forma pente Email-->
+                </div>
+
+                <div class="input_name">
+                    <i class="fa fa-lock lock"></i>
+                    <input type="password" placeholder="Parola" class="text_name">      <!--Forma pentru Parola-->
+                </div>
+
+                <div class="input_name">
+                    <i class="fa fa-lock lock"></i>
+                    <input type="password" placeholder="Parola" class="text_name">      <!--Forma pentru a introduce parola inca odata-->
+                </div>
+
+                <div class="input_name">
+                    <input type="radio" name="first_radio_group" id="male">     <!--Radio pentru genul masculin-->
+                    <label for="male" class="gender">Masculin</label>
+                    <input type="radio" name="first_radio_group" id="famale">   <!--Pentru genul femenin-->
+                    <label for="famale" class="gender">Femenin</label>
+                </div>
+
+                <div class="input_name">
+                    <select class="country">            <!--Selector pentru a alege orasul-->
+                        <option>Alegeti orasul</option>
+                        <option>Chisinau</option>
+                        <option>Balti</option>
+                        <option>Cahul</option>
+                        <option>Orhei</option>
+                        <option>Drochia</option>
+                        <option>Comrat</option>
+                        <option>Leova</option>
+                    </select>
+                        <div class="arrow"></div>
+                </div>
+
+                <div class="input_name">
+                    <input type="checkbox" id="first_checkbox" class="check_button"> <!--checkbox-->
+                    <label for="first_checkbox">Sunt de acord cu ...</label>
+                </div>
+
+                <div class="input_name">
+                    <input type="checkbox" id="second_checkbox" class="check_button"> <!--checkbox 2-->
+                    <label for="second_checkbox">Sunt de acord inca si cu asta ...</label>
+                </div>
+
+                <div class="input_name">
+                    <input type="submit" class="button" value="Register">   <!--butonul registrarea-->
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+</html>
