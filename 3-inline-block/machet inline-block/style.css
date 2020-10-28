@@ -1,0 +1,45 @@
+*{
+    margin: 5px 0 5px 0;
+    text-align: center;
+}
+header,nav,aside,section,footer{
+    border: 1px solid #000;
+}
+
+header{
+    background:gray;
+    height: 70px;
+}
+
+nav{
+    background:gray;
+    height: 70px;
+}
+
+
+.first_element{
+    display: inline-block;
+    width: 25%;
+    height: 330px;
+    background: gray;
+}
+
+.second_element{
+    display: inline-block;
+    width: 50%;
+    height: 330px;
+    background: gray;
+}
+
+.third_element{
+    display: inline-block;
+    width: 23.9%;
+    height: 330px;
+    background: gray;
+}
+
+footer{
+    height: 100px; 
+    background: gray;
+}
+

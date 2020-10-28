@@ -1,0 +1,73 @@
+body{
+    background: rgb(34, 34, 34);
+}
+
+.grid{
+    border:2px solid white;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.grid__name .grid__style{
+    display:grid;
+    grid-template-columns: 400px;
+    grid-template-rows: 100px;
+    text-align: center;
+
+}
+
+.grid__info{
+    display: grid;
+    grid-template-columns: 200px 100px auto ;
+    grid-template-rows: 100px 100px 100px;
+}
+
+img{
+    width: 80%;
+    margin-top: 60px;
+}
+
+.grid__photo{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    padding: 5px;
+}
+
+.grid__name{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.grid__phone{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.grid__email{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.grid__job{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+
+
+.grid__style, .grid__name{
+    text-align: center;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    color: blanchedalmond;
+    font-size: 20px;
+}
