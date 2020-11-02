@@ -1,0 +1,388 @@
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background:rgb(235, 231, 231);
+    display: grid;
+    user-select: none;
+}
+
+body#home-page{
+    grid-template-columns: 0.5fr 2fr 4fr 2fr 0.5fr;
+    grid-template-rows: 200px 80px auto 100px ;
+    grid-template-areas: 
+    "header header header header header"
+    "nav nav nav nav nav"
+    ". aside-left section aside-right ."
+    "footer footer footer footer footer "
+    ;
+}
+
+body#about-page{
+    grid-template-columns: 0.5fr 2fr 3fr 3fr 0.5fr;
+    grid-template-rows: 200px 80px auto 100px ;
+    grid-template-areas: 
+    "header header header header header"
+    "nav nav nav nav nav"
+    ". section section about-me ."
+    "footer footer footer footer footer "
+    ;
+}
+
+body#photo-page{
+    grid-template-columns: 0.5fr 2fr 4fr 2fr 0.5fr;
+    grid-template-rows: 200px 80px auto 100px ;
+    grid-template-areas: 
+    "header header header header header"
+    "nav nav nav nav nav"
+    ". section section section ."
+    "footer footer footer footer footer "
+    ;
+}
+
+body#video-page{
+    grid-template-columns: 0.5fr 2fr 4fr 2fr 0.5fr;
+    grid-template-rows: 200px 80px auto 100px ;
+    grid-template-areas: 
+    "header header header header header"
+    "nav nav nav nav nav"
+    ". section section section ."
+    "footer footer footer footer footer "
+    ;
+}
+
+body#contact-page{
+    grid-template-columns: 0.5fr 2fr 3fr 3fr 0.5fr;
+    grid-template-rows: 200px 80px 500px 100px ;
+    grid-template-areas: 
+    "header header header header header"
+    "nav nav nav nav nav"
+    ". section section aside-form ."
+    "footer footer footer footer footer "
+    ;
+}
+
+header{
+    background: #dce0f8;
+    height: 200px;
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+header img{
+    height: 150px;
+    width: 150px;
+    margin: 20px 0 0 150px;
+}
+
+header img:hover{
+    opacity: 0.8;
+}
+
+header h1{
+    text-align: center;
+    line-height: 150px;
+    margin: 0; 
+    font-size: 80px;
+    color: black;
+    filter: contrast(10);
+    text-shadow:
+    4px  4px 120px rgba(256, 256, 256, 1),
+    -4px -4px 120px rgba(256, 256, 256, 1),
+    -4px  4px 120px rgba(256, 256, 256, 1),
+    4px -4px 120px rgba(256, 256, 256, 1)
+    ;
+}
+
+@keyframes anim {
+    0%   { opacity: 0; filter: blur(1px)}
+    10%  { opacity: 0; }
+    90%  { opacity: 1; }
+    100% { opacity: 1; filter: blur(1px)}
+}
+
+.A{
+    animation: anim 3s infinite alternate-reverse;
+}
+ 
+nav{
+    background: rgb(24, 24, 26);
+    height: 80px;
+    grid-area: nav; 
+}
+
+nav ul{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    column-gap: 50px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+nav ul li a{
+    display: block;
+    height: 77px;
+    text-align: center;
+    line-height: 70px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+nav ul li a.active{
+    color:rgb(50, 153, 223);
+    border-bottom: 3px solid rgb(50, 153, 223);
+}
+
+nav ul li a:hover{
+    color:rgb(50, 153, 223);
+    border-bottom: 3px solid rgb(50, 153, 223);
+}
+
+#aside-left{
+    height: auto;
+    grid-area: aside-left;
+}
+
+#aside-left #aside-right div{
+    height: 300px;
+    background:white;
+    margin:10px 0 10px 0;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "aside-img"
+    "ssilka"
+    ;
+}
+
+aside div img{
+    height: 100%;
+    width: 100%;
+}
+
+aside div img:hover{
+    transform:scale(0.9);
+    opacity: 0.8;
+    transition: 0.4s;
+}
+
+aside div a{
+    text-decoration: none;
+    color:black;
+}
+
+aside div a:hover{
+    color:blue;
+    transition: 0.4s;
+}
+
+#aside-img{
+    grid-area:aside-img;
+}
+
+#ssilka{
+    grid-area: ssilka;
+    text-align: center;
+}
+
+section{
+    background: white;
+    min-height: 400px;
+    height: auto;
+    grid-area: section;
+    padding: 0 15px 0 15px;
+}
+
+section div {
+    height: auto;
+}
+
+/*---Читать далее---*/
+
+.read-more-state{
+    display: none;
+}
+
+.read-more-target{
+    opacity: 0;
+    max-height: 0;
+    font-size: 0;
+    transition: 0.1s;
+}
+
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+}
+
+.read-more-state ~ .read-more-trigger:before {
+    content: 'Mai departe>>';
+}
+
+.read-more-state:checked ~ .read-more-trigger:before {
+    content: '<<Inchide';
+}
+
+.read-more-trigger {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 .5em;
+    color: #666;
+    font-size: .9em;
+    line-height: 2;
+    border: 1px solid #ddd;
+    border-radius: .25em;
+}
+
+.read-more-trigger:hover{
+    background:rgb(93, 169, 255);
+    color: #fff;
+    transition: 0.7s;
+}
+
+section h1{
+    text-align: center;
+}
+
+section p{
+    text-align: justify;
+}
+
+section p#photo-gallery{
+    margin: 10px 0 0 0 ;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    column-gap: 10px;
+}
+
+section p#video-gallery{
+    margin: 10px 0 0 0 ;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5,1fr);
+    gap:20px;
+
+}
+
+#img{
+    height: 100%;
+    width: 100%;
+    margin: 7px 0 0 0;
+}
+
+#img:hover{
+    opacity: 0.7;
+}
+
+#aside-right{
+    height: auto;
+    grid-area: aside-right;
+}
+
+#contact-form{
+    display: grid;
+    padding: 10px;
+    gap: 20px;
+}
+
+#contact-form h3{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#contact-form input, #contact-form select {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#contact-form div label a{
+    color:blue;
+}
+
+#button{
+    background:rgb(127, 194, 127);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-left: 70%;
+}
+
+#button:hover{
+    background:rgb(0, 165, 22);
+    color: #fff;
+    transition: 0.3s;
+}
+
+#aside-form{
+    grid-area: aside-form;
+}
+
+aside div form label a{
+    color:blue;
+}
+
+#about-me{
+    grid-area: about-me;
+}
+
+
+.card{
+    border: 1px solid gray;
+    width: 400px;
+    height: 250px;
+    border-radius:10px;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.card:hover{
+    transform:scale(0.9);
+    opacity: 0.8;
+    box-shadow:none;
+    background: rgb(241,108,166);
+    background: radial-gradient(circle, rgba(241,108,166,1) 3%, rgba(214,166,204,1) 22%, rgba(185,159,195,1) 38%, rgba(226,97,199,1) 52%, rgba(148,203,158,1) 77%, rgba(99,145,199,1) 100%);
+    transition: 0.6s;
+}
+
+.card h2{
+    font-family: Georgia;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.card img{
+    width: 20%;
+    margin-right: 5px;
+}
+
+
+.card .info{
+    display: inline-block;
+}
+
+.card .info strong{
+    display: inline-block;
+    width: 100px;
+}
+
+footer{
+    background:rgb(9, 9, 36);
+    height: 100px;
+    grid-area: footer;
+    text-align: center;
+    color:white;
+    line-height: 100px;
+}
